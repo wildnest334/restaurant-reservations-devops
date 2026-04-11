@@ -1,0 +1,172 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+header {
+  background: #c0392b;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* ── Main ────────────────────────────────────────────────────────────────── */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ── Secciones ───────────────────────────────────────────────────────────── */
+.form-section,
+.lista-section {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  color: #c0392b;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+/* ── Formulario ──────────────────────────────────────────────────────────── */
+.form-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #c0392b;
+}
+
+button#btn-reservar {
+  width: 100%;
+  padding: 12px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+button#btn-reservar:hover {
+  background: #a93226;
+}
+
+/* ── Mensaje ─────────────────────────────────────────────────────────────── */
+.mensaje {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mensaje.hidden  { display: none; }
+.mensaje.exito   { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.mensaje.error   { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* ── Tarjetas de reserva ─────────────────────────────────────────────────── */
+.tarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #fafafa;
+  transition: box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.tarjeta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tarjeta-info strong {
+  font-size: 1rem;
+  color: #222;
+}
+
+.tarjeta-info span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-eliminar {
+  background: none;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* ── Estados vacío / cargando / error ────────────────────────────────────── */
+.vacio, .cargando, .error {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.error { color: #c0392b; }
