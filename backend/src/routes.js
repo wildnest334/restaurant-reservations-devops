@@ -2,7 +2,7 @@ const express  = require('express');
 const router   = express.Router();
 const mongoose = require('mongoose');
 const Reserva  = require('./models/Reserva');
-const logger   = require('../Logger');
+const logger   = require('../logger');
 
 // ── POST /reservas ─────────────────────────────────────────────────────────────
 router.post('/reservas', async (req, res) => {

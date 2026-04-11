@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const logger = require('../Logger');
+const logger = require('../logger');
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://db:27017/reservas';
 
