@@ -3,49 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reservas - Restaurante</title>
+  <title>El Brasero — Reservaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <header>
-    <h1>🍽️ Reservas del Restaurante</h1>
-  </header>
+  <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="nav-logo-symbol">✦</span>
+      <span class="nav-logo-text">El Brasero</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#menu-section">Menú</a></li>
+      <li><a href="#salones">Salones</a></li>
+      <li><a href="#reservar" class="nav-cta">Reservar</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <!-- Formulario -->
-    <section class="form-section">
-      <h2>Nueva Reserva</h2>
-      <div id="mensaje" class="mensaje hidden"></div>
+  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="ember" style="--x:15%;--d:0s;--s:4px"></div>
+      <div class="ember" style="--x:30%;--d:.8s;--s:3px"></div>
+      <div class="ember" style="--x:50%;--d:1.4s;--s:5px"></div>
+      <div class="ember" style="--x:65%;--d:.3s;--s:3px"></div>
+      <div class="ember" style="--x:80%;--d:1.1s;--s:4px"></div>
+      <div class="ember" style="--x:90%;--d:.6s;--s:3px"></div>
+      <div class="ember" style="--x:42%;--d:2s;--s:2px"></div>
+      <div class="ember" style="--x:72%;--d:1.7s;--s:3px"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Leña · Horno · Cava</p>
+      <h1 class="hero-title">Autoridad<br /><em>Gastronómica</em></h1>
+      <p class="hero-subtitle">Cortes exclusivos, mariscos del día y una selecta cava de vinos nacionales e internacionales.</p>
+      <a href="#reservar" class="hero-btn">Reservar una mesa</a>
+    </div>
+    <div class="hero-scroll"><span></span></div>
+  </section>
 
-      <div class="form-group">
-        <label for="nombre">Nombre del cliente</label>
-        <input type="text" id="nombre" placeholder="Ej: Juan Pérez" />
+  <!-- ── INTRO STRIP ───────────────────────────────────────────────────────── -->
+  <section class="intro-strip">
+    <div class="strip-item"><span class="strip-icon">🔥</span><span>Cocina de fuego vivo</span></div>
+    <div class="strip-sep">—</div>
+    <div class="strip-item"><span class="strip-icon">🥩</span><span>Cortes Prime importados</span></div>
+    <div class="strip-sep">—</div>
+    <div class="strip-item"><span class="strip-icon">🍷</span><span>Cava con más de 200 etiquetas</span></div>
+    <div class="strip-sep">—</div>
+    <div class="strip-item"><span class="strip-icon">🏛️</span><span>Salones privados</span></div>
+  </section>
+
+  <!-- ── MENÚ DESTACADO ────────────────────────────────────────────────────── -->
+  <section class="menu-section" id="menu-section">
+    <div class="section-label">Platillos Icónicos</div>
+    <h2 class="section-title">Lo mejor de nuestra cocina</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#3a1a0a,#7a3010)">
+          <span class="menu-card-emoji">🥩</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Tomahawk al horno de leña</h3>
+          <p>Corte Prime madurado 45 días, glaseado con mantequilla de hierbas finas y ajo negro.</p>
+          <span class="menu-card-tag">Especialidad de la casa</span>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="fecha">Fecha</label>
-        <input type="date" id="fecha" />
+      <div class="menu-card featured">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#0a1a2a,#0a3a5a)">
+          <span class="menu-card-emoji">🦞</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Langosta a la brasa</h3>
+          <p>Langosta entera a las brasas con mantequilla de azafrán, servida con risotto de trufa blanca.</p>
+          <span class="menu-card-tag">Del mar</span>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="hora">Hora</label>
-        <input type="time" id="hora" />
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:linear-gradient(135deg,#1a2a0a,#3a5a10)">
+          <span class="menu-card-emoji">🍄</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Tártara de wagyu</h3>
+          <p>Wagyu A5 japonés picado a cuchillo, yema curada, alcaparras y pan de masa madre tostado.</p>
+          <span class="menu-card-tag">Entrada</span>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="personas">Número de personas</label>
-        <input type="number" id="personas" min="1" max="20" placeholder="Ej: 4" />
+    </div>
+  </section>
+
+  <!-- ── SALONES ───────────────────────────────────────────────────────────── -->
+  <section class="salones-section" id="salones">
+    <div class="section-label">Espacios Privados</div>
+    <h2 class="section-title">Salones exclusivos</h2>
+    <div class="salones-grid">
+      <div class="salon-card">
+        <div class="salon-card-accent"></div>
+        <h3>Salón La Cava</h3>
+        <p>Hasta 12 personas. Rodeado de nuestra selección de vinos, perfecto para cenas de negocios íntimas.</p>
+        <span class="salon-cap">12 personas</span>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-accent"></div>
+        <h3>Salón El Brasero</h3>
+        <p>Hasta 30 personas. Con vista al horno de leña, ideal para celebraciones y eventos corporativos.</p>
+        <span class="salon-cap">30 personas</span>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-accent"></div>
+        <h3>Terraza del Chef</h3>
+        <p>Hasta 20 personas al aire libre. Experiencia privada con menú degustación de 7 tiempos.</p>
+        <span class="salon-cap">20 personas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESERVACIONES estilo OpenTable ───────────────────────────────────── -->
+  <section class="reservar-section" id="reservar">
+    <div class="reservar-left">
+      <div class="section-label light">Reservaciones</div>
+      <h2 class="reservar-title">Asegura<br />tu <em>mesa</em></h2>
+      <p class="reservar-desc">Selecciona el día, horario y número de comensales. Confirmamos tu reserva al instante.</p>
+      <div class="reservar-info">
+        <div class="info-row"><span class="info-icon">⏰</span><span>Lun–Vie: 1:00 pm – 11:00 pm</span></div>
+        <div class="info-row"><span class="info-icon">⏰</span><span>Sáb–Dom: 12:00 pm – 12:00 am</span></div>
+        <div class="info-row"><span class="info-icon">📞</span><span>81 8262 7151</span></div>
+      </div>
+    </div>
+
+    <div class="reservar-right">
+
+      <!-- PASO 1 -->
+      <div class="ot-widget" id="widget-step1">
+        <div class="ot-header">
+          <div class="ot-steps">
+            <span class="ot-step active">1</span>
+            <span class="ot-step-line"></span>
+            <span class="ot-step">2</span>
+            <span class="ot-step-line"></span>
+            <span class="ot-step">3</span>
+          </div>
+          <p class="ot-step-label">Elige fecha, hora y comensales</p>
+        </div>
+        <div class="ot-body">
+          <div class="ot-field">
+            <label>👥 Comensales</label>
+            <div class="ot-stepper">
+              <button class="stepper-btn" id="dec-personas">−</button>
+              <span id="personas-display">2</span>
+              <button class="stepper-btn" id="inc-personas">+</button>
+            </div>
+          </div>
+          <div class="ot-field">
+            <label>📅 Fecha</label>
+            <div class="calendar-strip" id="calendar-strip"></div>
+          </div>
+          <div class="ot-field">
+            <label>⏰ Horario disponible</label>
+            <div class="time-slots" id="time-slots"></div>
+          </div>
+          <button class="ot-next-btn" id="btn-siguiente">Continuar →</button>
+        </div>
       </div>
 
-      <button id="btn-reservar">Crear Reserva</button>
-    </section>
-
-    <!-- Lista de reservas -->
-    <section class="lista-section">
-      <h2>Reservas Actuales</h2>
-      <div id="lista-reservas">
-        <p class="cargando">Cargando reservas...</p>
+      <!-- PASO 2 -->
+      <div class="ot-widget hidden" id="widget-step2">
+        <div class="ot-header">
+          <div class="ot-steps">
+            <span class="ot-step done">✓</span>
+            <span class="ot-step-line filled"></span>
+            <span class="ot-step active">2</span>
+            <span class="ot-step-line"></span>
+            <span class="ot-step">3</span>
+          </div>
+          <p class="ot-step-label">Tus datos</p>
+        </div>
+        <div class="ot-body">
+          <div class="ot-resumen">
+            <span id="resumen-texto"></span>
+            <button class="ot-edit-btn" id="btn-editar">Editar</button>
+          </div>
+          <div class="ot-field">
+            <label>Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" />
+          </div>
+          <div id="mensaje" class="ot-mensaje hidden"></div>
+          <button class="ot-next-btn" id="btn-confirmar">Confirmar reserva</button>
+          <button class="ot-back-btn" id="btn-volver">← Volver</button>
+        </div>
       </div>
-    </section>
-  </main>
+
+      <!-- PASO 3 -->
+      <div class="ot-widget hidden" id="widget-step3">
+        <div class="ot-header">
+          <div class="ot-steps">
+            <span class="ot-step done">✓</span>
+            <span class="ot-step-line filled"></span>
+            <span class="ot-step done">✓</span>
+            <span class="ot-step-line filled"></span>
+            <span class="ot-step done active">✓</span>
+          </div>
+          <p class="ot-step-label">¡Reserva confirmada!</p>
+        </div>
+        <div class="ot-body ot-confirm-body">
+          <div class="confirm-icon">🎉</div>
+          <p class="confirm-msg" id="confirm-msg"></p>
+          <button class="ot-next-btn" id="btn-nueva">Hacer otra reserva</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── RESERVAS EXISTENTES ───────────────────────────────────────────────── -->
+  <section class="lista-section" id="lista">
+    <div class="section-label">Administración</div>
+    <h2 class="section-title dark">Reservas registradas</h2>
+    <div id="lista-reservas" class="lista-grid">
+      <p class="lista-cargando">Cargando reservas…</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="nav-logo-symbol">✦</span> El Brasero
+    </div>
+    <p class="footer-tagline">Leña · Horno · Cava</p>
+    <p class="footer-copy">© 2025 El Brasero. Todos los derechos reservados.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
