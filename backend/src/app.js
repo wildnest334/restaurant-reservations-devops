@@ -20,8 +20,13 @@ app.get('/health', (req, res) => {
 });
 
 // ── Iniciar servidor ───────────────────────────────────────────────────────────
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    logger.info(`Servidor corriendo en puerto ${PORT}`);
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      logger.info(`Servidor corriendo en puerto ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    logger.error(`No se pudo iniciar el servidor: ${error.message}`);
+    process.exit(1);
   });
-});
