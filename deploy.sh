@@ -1,10 +1,9 @@
 #!/bin/bash
-# deploy.sh - construye y levanta contenedores
 
 echo "Desplegando aplicación..."
 
-docker-compose down --remove-orphans
-docker-compose up --build -d
+docker compose down --remove-orphans
+docker compose up --build -d
 
 echo "Aplicación desplegada"
 echo "Frontend: http://localhost:3000"

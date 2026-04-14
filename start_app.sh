@@ -3,7 +3,7 @@
 
 echo "Iniciando aplicación..."
 
-docker-compose up -d
+docker compose up -d
 
 echo "Aplicación iniciada"
 echo "Frontend: http://localhost:3000"

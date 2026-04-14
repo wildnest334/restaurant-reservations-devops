@@ -3,6 +3,6 @@
 
 echo "Deteniendo aplicación..."
 
-docker-compose down
+docker compose down
 
 echo "Aplicación detenida"
