@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   backend:
-    build: ./backend
+    image: wildnest345/backend:latest
     container_name: backend_app
     ports:
       - "5000:5000"
@@ -12,7 +10,7 @@ services:
       - MONGO_URI=mongodb://db:27017/reservas
 
   frontend:
-    build: ./frontend
+    image: wildnest345/frontend:latest
     container_name: frontend_app
     ports:
       - "3000:80"
