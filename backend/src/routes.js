@@ -1,8 +1,8 @@
 const express  = require('express');
 const router   = express.Router();
 const mongoose = require('mongoose');
-const Reserva  = require('./models/Reserva');
-const logger   = require('../logger');
+const Reserva  = require('../models/reserva');
+const logger   = require('./logger');
 
 // ── POST /reservas ─────────────────────────────────────────────────────────────
 router.post('/reservas', async (req, res) => {
