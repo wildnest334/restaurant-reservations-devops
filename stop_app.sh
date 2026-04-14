@@ -1,5 +1,8 @@
 #!/bin/bash
-# stop_app.sh - detiene y elimina los contenedores
-echo "⏹️  Deteniendo aplicación..."
+# stop_app.sh - detiene contenedores
+
+echo "Deteniendo aplicación..."
+
 docker-compose down
-echo "✅ Aplicación detenida"
+
+echo "Aplicación detenida"
