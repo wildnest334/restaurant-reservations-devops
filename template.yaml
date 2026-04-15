@@ -1,0 +1,90 @@
+# Los Security Groups deben permitir tráfico en:
+# - Puerto 22 (SSH)
+# - Puerto 3000 (Frontend)
+# - Puerto 5000 (Backend)
+
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Infraestructura para Restaurant Reservations DevOps
+
+Resources:
+
+  # ─────────────── S3 Bucket ───────────────
+  AppBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: restaurant-reservations-bucket-devops
+
+  # ─────────────── Security Group ───────────────
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Permitir acceso a la aplicación web
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0   # SSH
+
+        - IpProtocol: tcp
+          FromPort: 3000
+          ToPort: 3000
+          CidrIp: 0.0.0.0/0   # Frontend
+
+        - IpProtocol: tcp
+          FromPort: 5000
+          ToPort: 5000
+          CidrIp: 0.0.0.0/0   # Backend
+
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0   # Alternativo frontend
+
+  # ─────────────── EC2 Instance ───────────────
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c02fb55956c7d316  # Amazon Linux 2 (puede variar por región)
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
+      KeyName: ssh -i "act2key.pem" ec2-user@ec2-100-31-103-134.compute-1.amazonaws.com 
+
+      Tags:
+        - Key: Name
+          Value: DevOps-Restaurant-App
+
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y git docker
+
+          systemctl start docker
+          systemctl enable docker
+          usermod -aG docker ec2-user
+
+          # Instalar docker compose moderno
+          mkdir -p /usr/local/lib/docker/cli-plugins
+          curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+          chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+          # Clonar repo
+          cd /home/ec2-user
+          git clone https://github.com/wildnest334/restaurant-reservations-devops.git
+
+          cd restaurant-reservations-devops
+
+          # Ejecutar despliegue automático
+          docker compose up -d
+
+Outputs:
+
+  InstancePublicIP:
+    Description: IP pública de la instancia EC2
+    Value: !GetAtt EC2Instance.PublicIp
+
+  WebsiteURL:
+    Description: URL de la aplicación
+    Value: !Sub "http://${EC2Instance.PublicIp}:3000"

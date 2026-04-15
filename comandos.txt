@@ -1,0 +1,21 @@
+Comandos para iniciar el programa en la instancia
+
+1) docker compose up -d
+2) docker compose down
+3) docker compose up -d
+4) docker ps
+5) docker compose logs -f
+6) y ya vas al link
+
+
+Comandos para iniciar la instanica en mi PC
+
+1) docker compose up -d
+2) docker compose down
+3) docker compose up -d
+4) docker ps
+5) docker compose logs backend
+6) docker build -t wildnest345/frontend ./frontend
+7) docker build -t wildnest345/backend ./backend
+8) docker-compose up --build
+9) y ya vas al link de localhost:3000
