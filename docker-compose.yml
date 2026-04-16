@@ -1,14 +1,15 @@
-backend:
-  build: ./backend
-  container_name: backend_app
-  ports:
-    - "5000:5000"
-  depends_on:
-    - db
-  environment:
-    - MONGO_URI=mongodb://db:27017/reservas
-  volumes:
-    - ./backend/logs:/app/logs
+services:
+  backend:
+    build: ./backend
+    container_name: backend_app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - MONGO_URI=mongodb://db:27017/reservas
+    volumes:
+      - ./backend/logs:/app/logs
 
   frontend:
     image: wildnest345/frontend:latest

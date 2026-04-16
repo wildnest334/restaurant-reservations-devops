@@ -1,0 +1,8 @@
+[2026-04-16 19:11:40] INFO: Conectado a MongoDB: mongodb://db:27017/reservas
+[2026-04-16 19:11:40] INFO: Servidor corriendo en puerto 5000
+[2026-04-16 19:15:12] INFO: Consulta de reservas: 14 registro(s) devuelto(s)
+[2026-04-16 19:30:24] INFO: Consulta de reservas: 14 registro(s) devuelto(s)
+[2026-04-16 19:36:09] INFO: Reserva creada: ID 69e13a29614cb5ddf09a9f27 | EjemploClase - 2026-04-17 14:00 - 2 persona(s)
+[2026-04-16 19:36:09] INFO: Consulta de reservas: 15 registro(s) devuelto(s)
+[2026-04-16 23:18:12] INFO: Conectado a MongoDB: mongodb://db:27017/reservas
+[2026-04-16 23:18:12] INFO: Servidor corriendo en puerto 5000
