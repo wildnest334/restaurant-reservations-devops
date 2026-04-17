@@ -5,8 +5,13 @@ Comandos para iniciar el programa en la instancia
 3) docker compose up -d
 4) docker ps
 5) docker compose logs -f
+6) curl icanhazip.com para sacar la ip 
 6) y ya vas al link
-
+- docker exec -it mongodb mongosh
+- show dbs
+- use reservas
+- show collections
+7) db.reservas.find().pretty()
 
 Comandos para iniciar la instanica en mi PC
 
